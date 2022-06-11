@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import cloudinary
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'awardsapp',
     'django_bootstrap5',
     'rest_framework',
@@ -112,11 +114,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
 USE_TZ = True
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# cloudinary configurations
+cloudinary.config( 
+    cloud_name = 'dfzxfrvs7', 
+    api_key ='371224673612841',
+    api_secret = 'YruoGtkK3WWHvFnRQjGFctqla_g'
+)
 
 
 # Static files (CSS, JavaScript, Images)
