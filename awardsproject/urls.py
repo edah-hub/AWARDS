@@ -19,4 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('awardsapp.urls')),
+    path(r'^accounts/', include('registration.backends.simple.urls')),
+    path(r'^logout/$', views.logout, {"next_page": '/'}),
 ]
