@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate,logout
 from .models import Profile,Project
-from .forms import NewImageForm
+from .forms import NewImageForm, UpdatebioForm,PostForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -67,7 +67,7 @@ def edit_profile(request):
             image = form.save(commit=False)
             image.user = current_user
             image.save()
-        return redirect('homePage')
+        return redirect('home')
 
     else:
         form = UpdatebioForm()
@@ -81,21 +81,21 @@ def signout(request):
 @login_required(login_url='/accounts/login/')
 def addpost(request):
     if request.method=="POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             post= form.save(commit=False)
             post.user=request.user
             post.save()
-            return redirect('/')
+            return redirect('home')
 
     else:
         form=PostForm()
     try:
-        posts=Post.objects.all() 
+        posts=Project.objects.all() 
         posts=posts[::-1] 
-    except Post.DoesNotExist:
+    except Project.DoesNotExist:
         posts=None
-    return render(request,'newpost.html',{"form":form,"posts":posts}) 
+    return render(request,'registration/new_post.html',{"form":form,"posts":posts}) 
 
 @login_required(login_url='/accounts/login/')
 def postproject(request):
@@ -105,12 +105,12 @@ def postproject(request):
             project = form.save(commit=False)
             project.user=request.user
             project.save()
-        return redirect('/')
+        return redirect('home')
     else:
         form = PostForm()
     context = {
         'form':form,
     }
-    return render(request, 'newpost.html', context)
+    return render(request, 'registration/new_post.html', context)
 
 

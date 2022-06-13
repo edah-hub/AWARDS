@@ -1,5 +1,5 @@
 {%extends "registration/base.html"%}
-{% load bootstrap4 %}
+{% load django_bootstrap5 %}
 {%load static%}
 {% block content %}
 
@@ -23,7 +23,7 @@
      <div class="row">
 
 
-  <form  action="{%url 'new_project'%}" method="post" style="font-family: 'Dosis', sans-serif;" enctype="multipart/form-data">
+  <form  action="{%url 'addpost'%}" method="post" style="font-family: 'Dosis', sans-serif;" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}

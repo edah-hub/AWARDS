@@ -26,6 +26,12 @@ class UpdatebioForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['user',]
+        
+class PostForm(forms.ModelForm):
+    photo=forms.ImageField(label="")
+    class Meta:
+        model=Project
+        fields=('project_image','title','project_url','description')
 
 
 class NewsLetterForm(forms.Form):

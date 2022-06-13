@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% load static %} {% load bootstrap4%} {% block content %}
+{% extends 'base.html' %}
+ {% load static %} 
+ {% load django_bootstrap5%} {% block content %}
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
 
 <div class="container">
@@ -52,7 +54,7 @@
 <h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
 <h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
 
-<h3 style="font-family: 'Dosis', sans-serif;">Add your comment</h3>
+<h3 style="font-family: 'Dosis', sans-serif;">Add comment</h3>
   <hr>
   <form action=""  method="post" style="font-family: 'Dosis',sans-serif;">
     {%csrf_token%} {% bootstrap_form form %}
@@ -74,21 +76,9 @@
 <div class="container">
     <div class="col-md-12">
       <div class="footer text-center">
-        <ul id="footer1">
-          <li>ABOUT US</li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>JOBS</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
-          <br>
 
-          <li style="font-size:10px;"> <strong>© 2018 MELISSA MALALA</strong></li>
+
+          <li style="font-size:10px;"> <strong>© 2022 Chepngetich Edah</strong></li>
         </ul>
 
       </div>

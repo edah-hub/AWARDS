@@ -8,7 +8,7 @@
 
   <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:white;">
 
-    <h1 class="h1" style="font-family: 'Dosis', cursive; color:blue;font-size:70px;">Awards</h1>
+    <h1 class="h1" style="font-family: 'Dosis', cursive; color:#11999E;font-size:70px;">Awards</h1>
     <p class="h1" style="font-family: 'Dosis', cursive; color:black;font-size:25px;">View projects, submit your own projects and have them reviewed.</p>
   </div>
 </div>
@@ -38,8 +38,10 @@
 
 <div class="jumbotron text-center mt-3" style="background-color:white;font-family: 'Dosis', sans-serif;">
 
-  <form action="{%url 'homePage'%}" method="post">
-    {%csrf_token%} {% bootstrap_form letterForm %}
+  <form action="{%url 'home'%}" method="post">
+    {%csrf_token%}{% for field in form %}
+    {% bootstrap_field field %}
+{% endfor %}
     <input type="submit" style="background-color:white;" value="Subscribe To Awards ">
   </form>
 
@@ -49,21 +51,9 @@
 <div class="container">
   <div class="col-md-12">
     <div class="footer text-center">
-      <ul id="footer1">
-        <li>ABOUT US</li>
-        <li>SUPPORT</li>
-        <li>PRESS</li>
-        <li>API</li>
-        <li>JOBS</li>
-        <li>PRIVACY</li>
-        <li>TERMS</li>
-        <li>DIRECTORY</li>
-        <li>PROFILES</li>
-        <li>HASHTAGS</li>
-        <li>LANGUAGE</li>
-        <br>
+     
 
-        <li style="font-size:10px;"> <strong>© 2018 MELISSA MALALA</strong></li>
+        <li style="font-size:10px;"> <strong>© 2022 Chepngetich Edah</strong></li>
       </ul>
     </div>
   </div>

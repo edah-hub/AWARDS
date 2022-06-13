@@ -1,6 +1,26 @@
 from django.contrib import admin
 from .models import Project
+from .models import Location,tags, Image, Project, Profile, Review
 
 # Register your models here.
+class ImageAdmin(admin.ModelAdmin):
+    filter_horizontal = ('tags',)
 
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user',)
+
+class ReviewAdmin(admin.ModelAdmin):
+    model = Review
+    list_display = ('project', 'usability_rating', 'content_rating', 'design_rating', 'user', 'comment', 'image',)
+    list_filter = ['user',]
+    search_fields = ['comment',]
+
+admin.site.register(Location)
+admin.site.register(tags)
+admin.site.register(Image, ImageAdmin)
+admin.site.register(Profile, ProfileAdmin)
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(Review, ReviewAdmin)
