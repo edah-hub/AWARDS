@@ -1,12 +1,13 @@
-from telnetlib import AUTHENTICATION
 from __future__ import unicode_literals
+from telnetlib import AUTHENTICATION
+from .email import send_welcome_email
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Image,Location,tags, Profile, Review, NewsLetterRecipients, Like, Project
 from django.http  import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .forms import NewImageForm, UpdatebioForm, ReviewForm, NewProjectForm
+from .forms import NewImageForm, PostForm, RegistrationsForm, UpdatebioForm, ReviewForm, NewProjectForm
 from .email import send_welcome_email
 from .forms import NewsLetterForm
 from rest_framework import generics
@@ -14,6 +15,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ProjectSerializer, ProfileSerializer
 from rest_framework import status
+from awardsapp.serializers import *
 from .permissions import IsAdminOrReadOnly
 from django.shortcuts import render
 from .models import Profile,Project
