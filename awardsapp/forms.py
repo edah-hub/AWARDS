@@ -30,7 +30,7 @@ class UpdatebioForm(forms.ModelForm):
         exclude = ['user',]
         
 class PostForm(forms.ModelForm):
-    photo=forms.ImageField(label="")
+    # photo=forms.ImageField(label="")
     class Meta:
         model=Project
         fields=('project_image','title','url','description')

@@ -16,11 +16,11 @@
 
 <div class="jumbotron itson mb-3 ">
 
-  <div class="card-deck flex-wrap">
+  <div class="row card-deck ">
     {% for project in all_project %}
     <!-- <h1>All Projects</h1> -->
 
-    <div class="card border-secondary w-33"><a href="{% url 'project' project.id %}">
+    <div class="col-6 card border-secondary w-100"><a href="{% url 'project' project.id %}">
 
         <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid"
           id="eachimage1" size="100px200"></a>

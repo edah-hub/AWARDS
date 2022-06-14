@@ -23,13 +23,13 @@
                   </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{%url 'addpost' %}">Add project</a>
+                <a class="nav-link" href="{%url 'postproject' %}">Add project</a>
             </li>
 
               <li class="nav-item nav-icon">
-                  <a href="{%url 'addpost' %}">
+                  <a href="{%url 'postproject' %}">
                       <i class="fas fa-plus"></i>
-                      <span class="d-sm-block d-md-none d-xl-none">Add a  Post</span>
+                      <span class="d-sm-block d-md-none d-xl-none">login</span>
                   </a>
               </li>
 
@@ -44,12 +44,14 @@
           </ul>
       </div>
       </div>
-      <div class="input-group rounded">
+      <form action="{%url 'search_projects'%}"> 
+        <div class="input-group rounded">
         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         <span class="input-group-text border-0" id="search-addon">
           <i class="fas fa-search"></i>
         </span>
-      </div>
+      </div></form>
+
 
         <!-- <div class="input-group">
           <input id="search-input" type="search" class="form-control" placeholder="Search anything...">  

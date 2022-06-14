@@ -9,7 +9,7 @@ urlpatterns=[
     path('',views.index,name='home'),
     path('register/',views.register,name='registrations'),
     path('signin/',views.signin,name='login'),
-    path('new_post/',views.addpost,name='addpost'),
+    path('new_post/',views.postproject,name='postproject'),
     # path('logout/',views.logout,name='logout'),
     path('logout/', LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
     

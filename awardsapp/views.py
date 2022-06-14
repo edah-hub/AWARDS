@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from django.core.exceptions import ObjectDoesNotExist
+
 from telnetlib import AUTHENTICATION
 from .email import send_welcome_email
 from django.shortcuts import render, redirect, get_object_or_404
@@ -39,15 +39,15 @@ def index(request):
 
 def signin(request):
     if request.method=="POST":
-        username=request.POST["username"]
-        password=request.POST["password"]
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user=authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
             messages.success(request,"You have successfuly loged in")
             return redirect ("/")
-    return render(request,'login.html')
+    return render(request,'registration/login.html')
 
 def register(request):
     if request.method == "POST":
@@ -108,24 +108,24 @@ def logout(request):
         logout(request)
         return redirect('login')
 
-@login_required(login_url='/accounts/login/')
-def addpost(request):
-    if request.method=="POST":
-        form = PostForm(request.POST,request.FILES)
-        if form.is_valid():
-            post= form.save(commit=False)
-            post.user=request.user
-            post.save()
-            return redirect('home')
+# @login_required(login_url='/accounts/login/')
+# def addpost(request):
+#     if request.method=="POST":
+#         form = PostForm(request.POST,request.FILES)
+#         if form.is_valid():
+#             post= form.save(commit=False)
+#             post.user=request.user
+#             post.save()
+#             return redirect('home')
 
-    else:
-        form=PostForm()
-    try:
-        posts=Project.objects.all() 
-        posts=posts[::-1] 
-    except Project.DoesNotExist:
-        posts=None
-    return render(request,'registration/new_post.html',{"form":form,"posts":posts}) 
+#     else:
+#         form=PostForm()
+#     try:
+#         posts=Project.objects.all() 
+#         posts=posts[::-1] 
+#     except Project.DoesNotExist:
+#         posts=None
+#     return render(request,'registration/new_post.html',{"form":form,"posts":posts}) 
 
 @login_required(login_url='/accounts/login/')
 def postproject(request):
@@ -233,11 +233,11 @@ def new_project(request):
             project = form.save(commit=False)
             project.user = current_user
             project.save()
-        return redirect('homePage')
+        return redirect('home')
 
     else:
         form = NewProjectForm()
-    return render(request, 'registration/new_project.html', {"form": form})
+    return render(request, 'registration/new_post.html', {"form": form})
 
 # Viewing a single picture
 
