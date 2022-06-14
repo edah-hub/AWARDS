@@ -1,4 +1,4 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %} {%load static%} {% block content %}
+{%extends "registration/base.html"%} {% load django_bootstrap5 %} {%load static%} {% block content %}
 
 <div class="container" style="background-color:#fff;
  background-image:('../../static/photos/rawpixel-594846-unsplash.jpg')">
@@ -40,7 +40,8 @@
 
           <form action="/accounts/register/" method="post" style="font-family: 'Dosis', cursive;">
             {% csrf_token %} {% bootstrap_form form %}
-            <div class="form-group">
+            <div class="form-group"> <p>Already have an account?</p>
+              <a href="{%url 'login'%}"></a>             
               <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
             </div>
 
@@ -55,32 +56,9 @@
     </div>
 
   </div>
-  <br>
-  <br>
-  <!-- empty div -->
+ 
 
 
-  <div class="container">
-    <div class="col-md-12">
-      <div class="footer text-center">
-        <ul id="footer1">
-          <li>ABOUT US</li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>JOBS</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
-          <br>
-
-          <li style="font-size:10px;"> <strong>© 2018 MELISSA MALALA</strong></li>
-        </ul>
-
-      </div>
 
     </div>
   </div>

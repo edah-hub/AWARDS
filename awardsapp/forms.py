@@ -1,6 +1,8 @@
 from .models import Image, Review, Profile, Project
 from django import forms
 from django.forms import ModelForm, Textarea, IntegerField
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class NewImageForm(forms.ModelForm):
@@ -37,3 +39,10 @@ class PostForm(forms.ModelForm):
 class NewsLetterForm(forms.Form):
     your_name = forms.CharField(label='First Name',max_length=30)
     email = forms.EmailField(label='Email')
+    
+class RegistrationsForm(UserCreationForm):
+    email = forms.EmailField(label='Email')
+    class Meta:
+        model=User
+        fields=('username','password1','password2','email')
+    
