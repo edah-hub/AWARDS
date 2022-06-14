@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from django.core.exceptions import ObjectDoesNotExist
 from telnetlib import AUTHENTICATION
 from .email import send_welcome_email
 from django.shortcuts import render, redirect, get_object_or_404
@@ -31,7 +32,7 @@ from django.contrib.auth import login,authenticate,logout
 # Create your views here.
 
 
-def home(request):
+def index(request):
     all_project=Project.objects.all()
     
     return render(request,'index.html',{'all_project':all_project})
@@ -96,11 +97,16 @@ def edit_profile(request):
         form = UpdatebioForm()
     return render(request, 'registration/edit_profile.html', {"form": form})
 
-def signout(request):
-    logout(request)
+# def signout(request):
+#     logout(request)
+#     if request.method=="POST":
+#         messages.success(request,"You have logged out, we will be glad to have you back again")
+#         return redirect ("login")
+    
+def logout(request):
     if request.method=="POST":
-        messages.success(request,"You have logged out, we will be glad to have you back again")
-        return redirect ("login")
+        logout(request)
+        return redirect('login')
 
 @login_required(login_url='/accounts/login/')
 def addpost(request):
@@ -295,6 +301,9 @@ def search_image(request):
         else:
             message = "You haven't searched for any image"
             return render(request, 'search.html', {"message": message})
+        
+        
+    
 
 # def search_users(request):
 #

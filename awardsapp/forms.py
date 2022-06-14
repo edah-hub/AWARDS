@@ -33,7 +33,7 @@ class PostForm(forms.ModelForm):
     photo=forms.ImageField(label="")
     class Meta:
         model=Project
-        fields=('project_image','title','project_url','description')
+        fields=('project_image','title','url','description')
 
 
 class NewsLetterForm(forms.Form):

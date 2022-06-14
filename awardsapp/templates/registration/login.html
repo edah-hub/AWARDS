@@ -1,4 +1,4 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %} {% load static %} {% block content %}
+{%extends "registration/base.html"%} {% load django_bootstrap5 %} {% load static %} {% block content %}
 <div class="container" style="background-color:#fff;">
   <div class="row p-0 m-0">
     <div class="col-md-6 mt-5">
@@ -22,14 +22,10 @@
           <h3 class="text-center" style="color:grey;font-size:15px;font-family: 'Dosis', sans-serif;">Login to see photos and videos from your friends.</h3>
         </div>
         <div class="card-body text-primary">
-          <form action="/accounts/login/" method="post" style="font-family: 'Dosis', sans-serif; " >
-            {% csrf_token %} {% bootstrap_form form%}
-
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
-            </div>
-
-            <input type="hidden" name="next" value="{{next}}">
+          <form action=" " method="post" style="font-family: 'Dosis', sans-serif; " >
+            {% csrf_token %}
+             {{form}}
+             <button type="submit" class="btn btn-primary">Login</button>
 
           </form>
         </div>
@@ -69,36 +65,10 @@
   <!-- ********************* -->
 </div>
 
-<br>
-<br>
 
 
-<div class="container">
-  <div class="col-md-12">
-    <div class="footer text-center">
-      <ul id="footer1">
-        <li>ABOUT US</li>
-        <li>SUPPORT</li>
-        <li>PRESS</li>
-        <li>API</li>
-        <li>JOBS</li>
-        <li>PRIVACY</li>
-        <li>TERMS</li>
-        <li>DIRECTORY</li>
-        <li>PROFILES</li>
-        <li>HASHTAGS</li>
-        <li>LANGUAGE</li>
-        <br>
-        <li style="font-size:10px;"> <strong>© 2018 MELISSA MALALA</strong></li>
-      </ul>
-
-    </div>
-
-  </div>
-
-</div>
 
 
-</div>
+
 
 {% endblock %}
