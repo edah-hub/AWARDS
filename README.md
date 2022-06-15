@@ -68,21 +68,34 @@ Profile - This endpoint should return all the user profiles with information suc
 Projects- This endpoint should return information pertaining to all the projects posted in your application.
 
 
-# Getting Started.
+## Setup/Installation Requirements
 
-    These instructions will get you a copy of the project up and running on a local host.
+<h3>Clone the repository below.</h3>
 
-    Step 1: git clone
-    Step 2: Enter the Project root folder
+`git clone https://github.com/edah-hub/Instagram-Clone.git`
 
-    cd gallery/
-    install virtual environment (venv) without pip
+<h3>Create a virtual environment and activate it.</h3>
 
-    python3.6 -m venv --without-pip virtual
-    Step 3: Activate virtual environment
+`python -m venv <name-of-environment>`<br>
+`source venv/bin/activate (Linux)`<br>
+`source venv/Scripts/activate (Windows)`
 
-    source virtual/bin/activate
-    install pip using curl
+<h3>Install the requirements.</h3>
+
+`pip install -r requirements.txt.`
+
+<h3>Create environmental variable file and add database configurations.</h3>
+
+`touch .env`
+
+<h3>Make a migrations.</h3>
+
+`python manage.py makemigrations`<br>
+`python manage.py migrate`
+
+<h3>Run the application.</h3>
+
+`python manage.py runserver.`
 
 
 ## Deployment
