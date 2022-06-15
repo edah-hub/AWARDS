@@ -101,7 +101,7 @@ fork the project and make a pull request.
 
 ## Live site
 
-Find the live site a href="#" target="_blank">github</a> pull  here.
+View the website <a href="#">Here</a>
 
 ## Authors
 
