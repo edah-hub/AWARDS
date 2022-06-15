@@ -22,7 +22,7 @@ urlpatterns=[
     path('new/image', views.new_image, name='new_image'),
     path('new/project', views.new_project, name='new_project'),
     path('edit/profile', views.edit_profile, name='edit_profile'),
-    path('profile/(?P<username>[0-9]+)',
+    path('profile/<int:id>',
         views.individual_profile_page, name='individual_profile_page'),
     path('ajax/newsletter/', views.newsletter, name='newsletter'),
     path('api/project/', views.ProjectList.as_view()),

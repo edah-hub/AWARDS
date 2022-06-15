@@ -13,7 +13,6 @@ from .email import send_welcome_email
 from .forms import NewsLetterForm
 from rest_framework import generics
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from .serializers import ProjectSerializer, ProfileSerializer
 from rest_framework import status
 from awardsapp.serializers import *
@@ -258,7 +257,7 @@ def edit_profile(request):
             image = form.save(commit=False)
             image.user = current_user
             image.save()
-        return redirect('homePage')
+        return redirect('home')
 
     else:
         form = UpdatebioForm()

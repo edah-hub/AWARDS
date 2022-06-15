@@ -25,7 +25,8 @@
 
       <div class="card-columns">
 
-        {% for project in projects %}
+        <!-- {% for project in projects %} -->
+        {% for project in all_project %}
         <div class="card border-secondary">
           <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage"
             size="100px200">
