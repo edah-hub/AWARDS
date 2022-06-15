@@ -72,7 +72,7 @@ Projects- This endpoint should return information pertaining to all the projects
 
 <h3>Clone the repository below.</h3>
 
-`git clone https://github.com/edah-hub/Instagram-Clone.git`
+`git clone https://github.com/edah-hub/AWARDS.git`
 
 <h3>Create a virtual environment and activate it.</h3>
 
