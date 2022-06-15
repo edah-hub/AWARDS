@@ -24,14 +24,8 @@ This is an application which allows users to post their projects and allow other
 
 
 # Project prompt
-    At Moringa school you create a lot of projects (IPs, Mid-week projects) but you never know how those projects rate with your peers. Your objective is to create an application like Awwards (Links to an external site.)Links to an external site. (It doesn't necessarily have to be exactly the same). The application will allow a user to post a project he/she has created and get it reviewed by his/her peers.
 
-A project can be rated based on 3 different criteria
 
-    Design
-    Usability
-    Content
-    These criteria can be reviewed on a scale of 1-10 and the average score is taken.
 
 # User stories
 As a user, you can:
@@ -42,6 +36,11 @@ As a user, you can:
     Search for projects 
     View projects overall score
     View my profile page.
+    A project can be rated based on 3 different criteria:
+    Design
+    Usability
+    Content
+    These criteria can be reviewed on a scale of 1-10 and the average score is taken.
 
 ## System Features/Objectives
      Projects
@@ -92,11 +91,8 @@ Projects- This endpoint should return information pertaining to all the projects
 ## Built With
 
     Python3.9.5 - Python is a programming language that lets you work quickly and integrate systems more effectively
-    Django - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design
-    postgresql - PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
-    Versioning
-    version 1.0.0
-
+    Django -Python3 Framework
+    postgresql - Database
 ## Bugs
 
     If you encounter any bugs, email me on cheruiyotedah@gmail.com. If you would like to add some changes, please feel free to
