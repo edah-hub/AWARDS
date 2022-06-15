@@ -20,31 +20,7 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
-# MODE=config("MODE", default="dev")
-# SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=False, cast=bool)
-# development
-# if config('MODE')=="dev":
-#    DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#            'NAME': config('DB_NAME'),
-#            'USER': config('DB_USER'),
-#            'PASSWORD': config('DB_PASSWORD'),
-#            'HOST': config('DB_HOST'),
-#            'PORT': '',
-#        }
-#    }
-# # production
-# else:
-#    DATABASES = {
-#        'default': dj_database_url.config(
-#            default=config('DATABASE_URL')
-#        )
-#    }
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -108,27 +84,6 @@ WSGI_APPLICATION = 'awardsproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'awards',
-#         'USER': 'moringa',
-#         'PASSWORD': 'Access'
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'df6mv1rpd37rhk',
-#         'USER': 'uhddpciqakifcy',
-#         'PASSWORD': 'b4e45ba25f4399ac614eb79daa131dcbafc03268ba97efa36c3821c177f1cfdd',
-#         'HOST':'ec2-54-172-175-251.compute-1.amazonaws.com',
-#         'PORT':'5432',
-#     }
-# }
-
 
 
 DATABASES = {
