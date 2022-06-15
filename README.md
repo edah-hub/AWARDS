@@ -21,10 +21,15 @@ This is an application which allows users to post their projects and allow other
 
 
 # References
- 
+ <ul>
+  <li>W3schools</li>
+  <li>Python documentation</li>
+  <li>Django documentation</li>
+
+</ul>
 
 
-# Project prompt
+
 
 
 
