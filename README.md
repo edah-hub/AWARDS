@@ -99,7 +99,7 @@ Projects- This endpoint should return information pertaining to all the projects
 
 ## Bugs
 
-    If you encounter any bugs, email me on melissamalala@gmail.com. If you would like to add some changes, please feel free to
+    If you encounter any bugs, email me on cheruiyotedah@gmail.com. If you would like to add some changes, please feel free to
 fork the project and make a pull request.
 
 ## Live site
