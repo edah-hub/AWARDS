@@ -20,40 +20,41 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+# MODE=config("MODE", default="dev")
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=False, cast=bool)
 # development
-if config('MODE')=="dev":
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-   }
-# production
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# if config('MODE')=="dev":
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            'NAME': config('DB_NAME'),
+#            'USER': config('DB_USER'),
+#            'PASSWORD': config('DB_PASSWORD'),
+#            'HOST': config('DB_HOST'),
+#            'PORT': '',
+#        }
+#    }
+# # production
+# else:
+#    DATABASES = {
+#        'default': dj_database_url.config(
+#            default=config('DATABASE_URL')
+#        )
+#    }
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$9c4--#ulz%p6shpp&4o9+^sl=v^oi7=u@ib&qd9(oaem&uy#j'
-DEBUG = True
-ALLOWED_HOSTS = []
+# SECRET_KEY = 'django-insecure-$9c4--#ulz%p6shpp&4o9+^sl=v^oi7=u@ib&qd9(oaem&uy#j'
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG',default=False,cast=bool)
+ALLOWED_HOSTS = ['polar-thicket-38982.herokuapp.com','.127.0.0.1']
 
 
 # Application definition
@@ -117,29 +118,34 @@ WSGI_APPLICATION = 'awardsproject.wsgi.application'
 #     }
 # }
 
-# if config('MODE')=="dev":
-#    DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#            'NAME': config('DB_NAME'),
-#            'USER': config('DB_USER'),
-#            'PASSWORD': config('DB_PASSWORD'),
-#            'HOST': config('DB_HOST'),
-#            'PORT': '5432',
-#        }
-#    }
-# production
-# else:
-#    DATABASES = {
-#        'default': dj_database_url.config(
-#            default=config('DATABASE_URL')
-#        )
-#    }
-   
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'df6mv1rpd37rhk',
+#         'USER': 'uhddpciqakifcy',
+#         'PASSWORD': 'b4e45ba25f4399ac614eb79daa131dcbafc03268ba97efa36c3821c177f1cfdd',
+#         'HOST':'ec2-54-172-175-251.compute-1.amazonaws.com',
+#         'PORT':'5432',
+#     }
+# }
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
+           'HOST': config('DB_HOST'),
+           'PORT': '5432',
+       }
+   }
+
+   
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
    
 
 
@@ -193,7 +199,7 @@ cloudinary.config(
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
