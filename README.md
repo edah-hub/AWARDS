@@ -109,7 +109,7 @@ Chepngetich Edah
 
 ## License
 
-This project is licensed under the MIT License
+The MIT License (MIT) Copyright (c) 2022 Chepngetich Edah.
 
 
 
