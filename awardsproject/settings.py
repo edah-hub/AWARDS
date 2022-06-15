@@ -96,14 +96,14 @@ WSGI_APPLICATION = 'awardsproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awards',
-        'USER': 'moringa',
-        'PASSWORD': 'Access'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'awards',
+#         'USER': 'moringa',
+#         'PASSWORD': 'Access'
+#     }
+# }
 
 if config('MODE')=="dev":
    DATABASES = {
