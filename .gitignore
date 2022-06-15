@@ -2,25 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+virtual/
+.env
 
 # C extensions
 *.so
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'cheruiyotedah@gmail.com'
-EMAIL_HOST_PASSWORD = 'Shantelkoko@04'
-
-SECRET_KEY = 'django-insecure-$9c4--#ulz%p6shpp&4o9+^sl=v^oi7=u@ib&qd9(oaem&uy#j'
-DEBUG=True
-DB_NAME='awards'
-DB_USER='moringa'
-DB_PASSWORD='Access'
-DB_HOST='127.0.0.1'
-MODE='dev'
-ALLOWED_HOSTS='.herokuapp.com'
-DISABLE_COLLECTSTATIC=1
 
 # Distribution / packaging
 .Python

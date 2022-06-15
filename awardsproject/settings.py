@@ -30,7 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-$9c4--#ulz%p6shpp&4o9+^sl=v^oi7=u@ib&qd9(oaem&uy#j'
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG',default=False,cast=bool)
-ALLOWED_HOSTS = ['polar-thicket-38982.herokuapp.com','.127.0.0.1']
+# DEBUG = True
+ALLOWED_HOSTS = []
+
+# ALLOWED_HOSTS = ['polar-thicket-38982.herokuapp.com','.127.0.0.1']
 
 
 # Application definition
@@ -89,14 +92,23 @@ WSGI_APPLICATION = 'awardsproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': '5432',
+        'NAME': 'instagram',
+        'USER': 'moringa',
+        'PASSWORD': 'Access',
     }
-       
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': '5432',
+#     }
+       
+# }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
